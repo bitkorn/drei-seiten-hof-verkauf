@@ -19,12 +19,13 @@
             "name": "3 Seiten Hof zu verkaufen",
             "datePosted": "2026-01-06",
             "description": "3 Seiten Hof - Autarkie - Selbstversorger - 1 ha Land - Brunnen",
-            "itemOffered": {
-                "@type": "House",
+            "mainEntity": {
+                "@type": "SingleFamilyResidence",
                 "additionalType": "https://de.wikipedia.org/wiki/Bauernhof",
                 "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Rudakmühle-Weiler 5-6, Hohendubrau OT Groß Saubernitz",
+                    "streetAddress": "Rudakmühle-Weiler 5-6",
+                    "addressLocality": "Hohendubrau OT Groß Saubernitz",
                     "postalCode": "02906",
                     "addressCountry": "DE"
                 },
@@ -34,12 +35,19 @@
                     "value": 200,
                     "unitCode": "MTK"
                 },
-                "lotSize": {
-                    "@type": "QuantitativeValue",
-                    "value": 11780,
-                    "unitCode": "MTK"
-                },
                 "amenityFeature": [
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Grundstücksfläche",
+                        "value": "11780 m²",
+                        "unitCode": "MTK"
+                    },
+                    {
+                        "@type": "LocationFeatureSpecification",
+                        "name": "Wohnfläche",
+                        "value": "200 m²",
+                        "unitCode": "MTK"
+                    },
                     {
                         "@type": "LocationFeatureSpecification",
                         "name": "Photovoltaikanlage",
