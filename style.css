@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Ubuntu, Regular";
+    src: url("../font/Ubuntu/Ubuntu-R.ttf");
+}
+
+@font-face {
+    font-family: "Ubuntu Mono, Regular";
+    src: url("../font/Ubuntu/UbuntuMono-R.ttf");
+}
+
+@font-face {
+    font-family: "Ubuntu, Bold";
+    src: url("../font/Ubuntu/Ubuntu-B.ttf");
+}
+
+body {
+    font-family: "Ubuntu Mono, Regular", monospace, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Ubuntu, Bold", monospace
+}
+
+h1 {
+    font-size: 36px
+}
+
+h2 {
+    font-size: 30px
+}
+
+h3 {
+    font-size: 24px
+}
+
+h4 {
+    font-size: 20px
+}
+
+h5 {
+    font-size: 20px
+}
+
+h6 {
+    font-size: 20px
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.certcol {
+    height: 290px;
+    padding: 6px;
+}

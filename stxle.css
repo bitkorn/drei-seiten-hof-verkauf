@@ -1,0 +1,62 @@
+/*
+  Grid-Stylesheet für die Galerie innerhalb <div class="grid">.
+  Hinweis: Damit die Styles aktiv werden, diese Datei per
+  <link rel="stylesheet" href="stxle.css"> im <head> einbinden.
+*/
+
+/* Container: CSS Grid für flexible, responsive Kacheln */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px; /* Abstand zwischen Kacheln */
+  align-items: start;
+}
+
+/* Einzelne Kachel/Thumbnail */
+.grid .thumb {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.grid .thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Bild füllt die Kachel-Breite aus */
+.grid .thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Caption unter dem Bild */
+.grid .thumb .caption {
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+  background: #f8f8f8;
+}
+
+/* Fokus-/Tastaturfreundlichkeit für Links in den Thumbnails */
+.grid .thumb a {
+  display: block;
+  outline: none;
+}
+
+.grid .thumb a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.35);
+}
+
+/* Sanfte Anpassung für sehr schmale Bildschirme */
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr; /* eine Spalte auf ganz schmalen Geräten */
+    gap: 12px;
+  }
+}
