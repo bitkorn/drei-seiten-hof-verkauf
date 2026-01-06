@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://hof.bitkorn.de/</loc>
+        <lastmod>2026-01-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+
+        <image:image>
+            <image:loc>https://hof.bitkorn.de/assets/drei_seiten_hof_verkauf_bild_006.jpg</image:loc>
+            <image:title>3 Seiten Hof Gesamtansicht von Osten</image:title>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://hof.bitkorn.de/assets/drei_seiten_hof_verkauf_bild_004.jpg</image:loc>
+            <image:title>3 Seiten Hof Gesamtansicht von Osten</image:title>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://hof.bitkorn.de/assets/drei_seiten_hof_verkauf_bild_077.jpg</image:loc>
+            <image:title>3 Seiten Hof Gesamtansicht von Süden</image:title>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://hof.bitkorn.de/assets/drei_seiten_hof_verkauf_bild_020.png</image:loc>
+            <image:title>3 Seiten Hof Luftbild</image:title>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://hof.bitkorn.de/assets/drei_seiten_hof_verkauf_bild_066.jpg</image:loc>
+            <image:title>Stube mit Kachelofen und Blick in die Küche</image:title>
+        </image:image>
+
+        <image:image>
+            <image:loc>https://hof.bitkorn.de/assets/drei_seiten_hof_verkauf_bild_065.jpg</image:loc>
+            <image:title>Küche</image:title>
+        </image:image>
+
+
+    </url>
+</urlset>

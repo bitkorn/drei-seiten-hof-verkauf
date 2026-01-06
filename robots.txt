@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Link zur Sitemap (absolut angeben)
+Sitemap: https://hof.bitkorn.de/sitemap.xml
