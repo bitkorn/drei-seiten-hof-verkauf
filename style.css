@@ -1,59 +1,276 @@
-@font-face {
-    font-family: "Ubuntu, Regular";
-    src: url("../font/Ubuntu/Ubuntu-R.ttf");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    /* Colors */
+    --primary: #4A6741;
+    --primary-light: #6B8E5E;
+    --secondary: #BC6C25;
+    --accent: #DDA15E;
+    --bg-light: #FEFAE0;
+    --text-dark: #283618;
+    --text-muted: #606C38;
+    --white: #FFFFFF;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+
+    /* Transitions */
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: 0.3s var(--ease);
 }
 
-@font-face {
-    font-family: "Ubuntu Mono, Regular";
-    src: url("../font/Ubuntu/UbuntuMono-R.ttf");
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@font-face {
-    font-family: "Ubuntu, Bold";
-    src: url("../font/Ubuntu/Ubuntu-B.ttf");
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Ubuntu Mono, Regular", monospace, Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* Typography */
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-    font-family: "Ubuntu, Bold", monospace
+h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
 }
 
 h1 {
-    font-size: 36px
+    font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 h2 {
-    font-size: 30px
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--primary);
+    margin-top: var(--space-lg);
 }
 
 h3 {
-    font-size: 24px
+    font-size: 1.5rem;
 }
 
-h4 {
-    font-size: 20px
+p {
+    margin-bottom: var(--space-sm);
 }
 
-h5 {
-    font-size: 20px
+/* Layout */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
 }
 
-h6 {
-    font-size: 20px
+section {
+    padding: var(--space-lg) 0;
 }
-.cursor-pointer {
+
+/* Components */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
     cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
 }
-.certcol {
-    height: 290px;
-    padding: 6px;
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    background: var(--bg-light);
+    color: var(--text-muted);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/drei_seiten_hof_verkauf_bild_006.jpg') center/cover no-repeat;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: var(--space-md);
+    z-index: 10;
+}
+
+.hero h1 {
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1 1 200px;
+    max-width: 250px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.9;
+    letter-spacing: 0.05em;
+}
+
+/* Features Styling */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.feature-card {
+    padding: var(--space-md);
+    background: var(--white);
+    border-bottom: 3px solid var(--bg-light);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    border-bottom-color: var(--primary);
+    background: #fcfcfc;
+}
+
+/* Contact Bar */
+.contact-section {
+    background: var(--bg-light);
+    padding: var(--space-lg) 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.mt-lg {
+    margin-top: var(--space-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--space-lg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: var(--space-xl) 0;
+    }
+
+    .hero-stats {
+        gap: var(--space-xs);
+    }
+
+    .stat-item {
+        flex: 1 1 140px;
+        padding: 0.6rem 1rem;
+    }
+
+    .stat-value {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: var(--space-lg) 0;
+    }
 }

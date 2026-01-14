@@ -1,62 +1,64 @@
 /*
-  Grid-Stylesheet für die Galerie innerhalb <div class="grid">.
-  Hinweis: Damit die Styles aktiv werden, diese Datei per
-  <link rel="stylesheet" href="stxle.css"> im <head> einbinden.
+  Gallery Styles - Premium Modern Look
 */
 
-/* Container: CSS Grid für flexible, responsive Kacheln */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px; /* Abstand zwischen Kacheln */
-  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
-/* Einzelne Kachel/Thumbnail */
 .grid .thumb {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: var(--white);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
 .grid .thumb:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Bild füllt die Kachel-Breite aus */
 .grid .thumb img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 200px;
+  /* Fixed height for consistency */
+  object-fit: cover;
+  transition: var(--transition);
 }
 
-/* Caption unter dem Bild */
+.grid .thumb:hover img {
+  transform: scale(1.05);
+}
+
 .grid .thumb .caption {
-  padding: 8px 10px;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #333;
-  background: #f8f8f8;
+  padding: 1.2rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  background: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-/* Fokus-/Tastaturfreundlichkeit für Links in den Thumbnails */
 .grid .thumb a {
   display: block;
-  outline: none;
+  text-decoration: none;
+  overflow: hidden;
 }
 
-.grid .thumb a:focus-visible {
-  box-shadow: 0 0 0 3px rgba(0,123,255,0.35);
-}
-
-/* Sanfte Anpassung für sehr schmale Bildschirme */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .grid {
-    grid-template-columns: 1fr; /* eine Spalte auf ganz schmalen Geräten */
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .grid .thumb img {
+    height: 250px;
   }
 }
